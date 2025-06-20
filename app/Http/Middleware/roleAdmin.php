@@ -16,17 +16,17 @@ class roleAdmin
      */
     public function handle(Request $request, Closure $next): Response
     {
-     
+    
+        // Get user object
         $user = Auth::user();
 
-        
-
+        // Check if user role is "admin", abort if not
         if ($user->role != 'admin') {
         
-            abort(403, 'Unauthorized action.');
+            abort(403, 'You are not authorized for this role');
         }
 
-
+        // If "admin", continue
         return $next($request);
     }
 }

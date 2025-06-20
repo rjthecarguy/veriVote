@@ -43,7 +43,7 @@
                         </x-dropdown-link>
 
                     @if(Auth::user()->role == 'admin')
-                    <x-dropdown-link :href="route('profile.edit')">
+                    <x-dropdown-link :href="route('admin')">
                         {{ __('Admin Panel') }}
                     </x-dropdown-link>
                     @else
