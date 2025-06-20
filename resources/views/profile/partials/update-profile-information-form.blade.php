@@ -29,6 +29,8 @@
             <x-input-error class="mt-2" :messages="$errors->get('phone')" />
         </div>
 
+     
+
         <div>
             <x-input-label for="email" :value="__('Email')" />
             <x-text-input id="email" name="email" type="email" class="mt-1 block w-full" :value="old('email', $user->email)" required autocomplete="username" />
@@ -52,6 +54,35 @@
                 </div>
             @endif
         </div>
+
+
+
+        @if ($user->role == 'admin')
+        <div class="mt-4 mb-4">
+            <p>Role:&nbsp;  <b>Admin</b></p>
+        </div>
+
+      
+
+        @else
+        <div class="mt-4 mb-4">
+            <p>Role: &nbsp; <b>User</b></p>
+        </div>
+        @endif
+
+        @if ($user->status == 1)
+        <div class="mt-4 mb-4">
+            <p>Status:&nbsp;  <b><span class="text-green-600">Active</span></b></p>
+        </div>
+
+        @else
+        <div class="mt-4 mb-4">
+            <p>Status:&nbsp;  <b><span class="text-red-600">Inactive</span></b></p>
+            <p class="mt-2 bg-red-100 py-2 px-2 rounded"><i>You currently do not have search capabilities enabled.  &nbsp; Please contact your manager for approval.
+            </i></p>
+        </div>
+        @endif
+
 
         <div class="flex items-center gap-4">
             <x-primary-button>{{ __('Save') }}</x-primary-button>
