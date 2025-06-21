@@ -30,6 +30,9 @@ table tr:nth-child(even) {
 
 <x-app-layout>
     <div class="container px-[20px]">
+
+        <h2 class="text-3xl mt-4 mb-[25px]">Manage Users</h2>
+
     <table id="example" class="table table-striped w-[90%]">
         <thead>
             <tr class="bg-blue-100">
@@ -42,11 +45,11 @@ table tr:nth-child(even) {
         <tbody>
 
             @forelse($users as $user)
-            <tr>
+            <tr class="hover:bg-blue-200">
                 <td>{{$user->name}}</td>
                 <td>{{$user->email}}</td>
-                <td>{{$user->role}}</td>
-                <td>{{$user->active}}</td>
+                <td>{{Str::title($user->role)}}</td>
+                <td class="{{$user->active == 1 ? 'text-green-900' : 'text-red-900'}}"> {{$user->active == 0 ? "No" : "Yes"}}</td>
                
             </tr>
 
