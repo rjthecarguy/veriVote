@@ -6,11 +6,33 @@ crossorigin="anonymous"></script>
 
 <link rel="stylesheet" href="https://cdn.datatables.net/2.3.2/css/dataTables.dataTables.min.css"/>
 
+<style>
+
+#dt-length-0 {
+    padding: 10px;
+    margin-left: 10px;
+    width: 80px;
+}
+
+.dt-column-order {
+    color: navy;
+}
+
+tr {
+  border-bottom: 1pt solid lightgray;
+}
+
+table tr:nth-child(even) {
+  background-color: lightgrey!important;
+}
+
+</style>
+
 <x-app-layout>
     <div class="container px-4">
     <table id="example" class="table table-striped w-[90%]">
         <thead>
-            <tr class="bg-blue-300 hover:bg-red-500">
+            <tr class="bg-blue-300">
                 <th>Name</th>
                 <th>Position</th>
                 <th>Office</th>
