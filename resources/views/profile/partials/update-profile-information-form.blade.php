@@ -70,7 +70,7 @@
         </div>
         @endif
 
-        @if ($user->status == 1)
+        @if ($user->active == 1)
         <div class="mt-4 mb-4">
             <p>Status:&nbsp;  <b><span class="text-green-600">Active</span></b></p>
         </div>
