@@ -16,7 +16,7 @@
 <form action="{{ route('users.update', $user) }}" method="POST">
     @csrf
     @method('PUT')
-<div class="flex gap-4 mt-4 px-[20px]">
+<div class="flex gap-4 mt-4 px-[30px]">
 
    
 
@@ -26,12 +26,12 @@
     <div class="mb-2"></div>
     <label>
         <input type="radio" name="active" value=1 {{ $user->active == 1 ? 'checked' : '' }}>
-        Active
+        &nbsp;Active
     </label><br>
     <div class="mb-2"></div>
     <label>
         <input type="radio" name="active" value=0 {{ $user->active == 0 ? 'checked' : '' }}>
-        Inactive
+        &nbsp;Inactive
     </label><br><br>
 
     </div>
@@ -42,19 +42,19 @@
     <div class="mb-2"></div>
     <label>
         <input type="radio" name="role" value="user" {{ $user->role === 'user' ? 'checked' : '' }}>
-        User
+        &nbsp;User
     </label><br>
     <div class="mb-2"></div>
     <label>
         <input type="radio" name="role" value="admin" {{ $user->role === 'admin' ? 'checked' : '' }}>
-        Admin
+        &nbsp;Admin
     </label><br><br>
     </div>
 
     </div>
 </div>
 
-<div class="ml-[40px] mt-4">    
+<div class="ml-[50px] mt-4">    
     <button class="bg-blue-800 rounded p-4 text-white" type="submit">Save</button>
 </div>
 
