@@ -12,7 +12,9 @@ Route::get('/', function () {
 });
 
 Route::get('/admin', [AdminController::class, 'index'])->middleware(['auth',roleAdmin::class])->name('admin');
-Route::get('/user/edit', [UserController::class, 'edit'])->middleware(['auth',roleAdmin::class])->name('user.edit');
+
+Route::resource('users', UserController::class);
+
 
 
 Route::get('/dashboard', function () {

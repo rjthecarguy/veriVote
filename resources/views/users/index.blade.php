@@ -1,4 +1,3 @@
-
 <script
 src="https://code.jquery.com/jquery-3.7.1.min.js"
 integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo="
@@ -47,7 +46,7 @@ table tr:nth-child(even) {
 
             @forelse($users as $user)
             <tr class="hover:bg-blue-200">
-                <td class="text-center text-blue-900 hover: cursor-pointer hover:font-bold"><a href="{{route('user.show', $user->id)}}">Edit</a></td>
+                <td class="text-center text-blue-900 hover: cursor-pointer hover:font-bold"><a href="{{route('users.show', $user->id)}}">Edit</a></td>
                 <td>{{$user->name}}</td>
                 <td>{{$user->email}}</td>
                 <td>{{Str::title($user->role)}}</td>
@@ -75,6 +74,3 @@ new DataTable('#example');
 </x-app-layout>
 
 <script>
-
-
-    
