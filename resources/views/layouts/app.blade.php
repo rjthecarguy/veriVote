@@ -15,6 +15,8 @@
         @vite(['resources/css/app.css', 'resources/js/app.js'])
         <script src="https://cdn.tailwindcss.com"></script>
         <script src="https://unpkg.com/gridjs/dist/gridjs.umd.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/sortablejs@latest/Sortable.min.js"></script>
+
     <script src="//unpkg.com/alpinejs" defer></script>
     <script src="https://cdn.datatables.net/2.3.2/js/dataTables.min.js"></script>
 
