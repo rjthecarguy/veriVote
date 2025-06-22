@@ -47,7 +47,7 @@ table tr:nth-child(even) {
 
             @forelse($users as $user)
             <tr class="hover:bg-blue-200">
-                <td class="text-center text-blue-900 hover: cursor-pointer hover:font-bold">Edit</td>
+                <td class="text-center text-blue-900 hover: cursor-pointer hover:font-bold"><a href="{{route('user.edit', $user->id)}}">Edit</a></td>
                 <td>{{$user->name}}</td>
                 <td>{{$user->email}}</td>
                 <td>{{Str::title($user->role)}}</td>
