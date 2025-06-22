@@ -43,7 +43,7 @@ class UserController extends Controller
 
         $user = User::findOrFail($id);
 
-        return($user->name);
+        return view('users.show')->with('user', $user);;
     }
 
     /**

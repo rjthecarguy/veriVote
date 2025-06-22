@@ -13,7 +13,7 @@ Route::get('/', function () {
 
 Route::get('/admin', [AdminController::class, 'index'])->middleware(['auth',roleAdmin::class])->name('admin');
 
-Route::resource('users', UserController::class);
+Route::resource('users', UserController::class)->middleware(['auth',roleAdmin::class]);
 
 
 
