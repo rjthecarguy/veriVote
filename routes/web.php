@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\AdminController;
+use App\Http\Controllers\UserController;
 use App\Http\Controllers\ProfileController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Middleware\roleAdmin;
@@ -11,6 +12,8 @@ Route::get('/', function () {
 });
 
 Route::get('/admin', [AdminController::class, 'index'])->middleware(['auth',roleAdmin::class])->name('admin');
+Route::get('/user/edit', [UserController::class, 'edit'])->middleware(['auth',roleAdmin::class])->name('user.admin');
+
 
 Route::get('/dashboard', function () {
     return view('dashboard');
