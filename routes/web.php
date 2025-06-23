@@ -11,6 +11,9 @@ Route::get('/', function () {
     return view('welcome');
 });
 
+Route::get('/users/{user}/roles', [UserController::class, 'editRoles']);
+Route::post('/users/{user}/roles', [UserController::class, 'updateRoles']);
+
 Route::get('/admin', [AdminController::class, 'index'])->middleware(['auth',roleAdmin::class])->name('admin');
 
 Route::resource('users', UserController::class)->middleware(['auth',roleAdmin::class]);

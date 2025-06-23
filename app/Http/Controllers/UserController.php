@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\User;
+use App\Models\Role;
 
 class UserController extends Controller
 {
@@ -38,12 +39,14 @@ class UserController extends Controller
     /**
      * Display the specified resource.
      */
-    public function show(string $id)
+    public function show(string $id, Role $role)
     {
 
         $user = User::findOrFail($id);
+        $roles = Role::all();
 
-        return view('users.show')->with('user', $user);;
+        return view('users.show')->with('user', $user)
+                                    ->with('roles', $roles);
     }
 
     /**
@@ -80,4 +83,17 @@ class UserController extends Controller
     {
         //
     }
+
+    public function editRoles(User $user)
+{
+    $roles = Role::all();
+    return view('user.roles', compact('user', 'roles'));
+}
+
+public function updateRoles(Request $request, User $user)
+{
+    $roleIds = $request->input('roles', []);
+    $user->roles()->sync($roleIds);
+    return response()->json(['message' => 'Roles updated.']);
+}
 }
