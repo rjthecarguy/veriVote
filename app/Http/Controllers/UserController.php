@@ -96,4 +96,12 @@ public function updateRoles(Request $request, User $user)
     $user->roles()->sync($roleIds);
     return response()->json(['message' => 'Counties updated.']);
 }
+
+public function showUserRoles($userId)
+{
+    $user = User::with('roles')->findOrFail($userId);
+    $roles = $user->roles;
+
+    return view('user.roles', compact('roles', 'user'));
+}
 }

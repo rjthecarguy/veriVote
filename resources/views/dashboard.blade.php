@@ -10,7 +10,7 @@
             <div class="bg-white overflow-hidden shadow-sm sm:rounded-lg">
                 <div class="p-6 text-gray-900">
                     <div class="container">
-                        <h2 class="mb-4">Search SB Voters</h2>
+                        <h2 class="mb-4 text-2xl font-bold">Search San Bernardino Voters</h2>
                         <form action="{{ url('/sbvoters/search') }}" method="GET">
                             @csrf
                             <div class="mb-3">
