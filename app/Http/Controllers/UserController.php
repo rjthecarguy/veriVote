@@ -94,6 +94,6 @@ public function updateRoles(Request $request, User $user)
 {
     $roleIds = $request->input('roles', []);
     $user->roles()->sync($roleIds);
-    return response()->json(['message' => 'Roles updated.']);
+    return response()->json(['message' => 'Counties updated.']);
 }
 }

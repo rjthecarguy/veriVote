@@ -13,16 +13,13 @@
 
         <h2 class="text-3xl mb-4">Manage User</h2>
 
-
-
-
-               
-
 <div class="container">  <!-- Main container -->
 
-        <div class ="row"> <!-- Row -->
+        <div class ="row bg-gray-200 rounded"> <!-- Row -->
                         
-             <div class="col-md-4 bg-gray-200 py-4 px-4 rounded" > <!-- Info col -->
+             <div class="col-md-4 py-4 px-2" > <!-- Info col -->
+                <!-- Wrapper -->
+                <div class="border-solid border-2 border-gray-400 bg-gray-300 p-2 rounded">
 
                 <!-- Info box -->
                 <div class="p-[20px] bg-white/70 rounded font-bold shadow-2xl">
@@ -84,16 +81,19 @@
                 </form>
 
 
-
+                </div> <!-- Wrapper -->
             </div> <!-- Info col -->
 
-            <div class="col-md-8">
+            <!-- County col -->
+            <div class="col-md-8 py-4 px-2">  
+                <!-- Wrapper -->
+                <div class="border-solid border-2 border-gray-400 bg-gray-300 p-2 rounded">
 
-                <h2>Assign Roles to {{ $user->name }}</h2>
+                <h2 class="text-2xl mb-4">Assign Counties to {{ $user->name }}</h2>
 
                 <div class="roleContainer">
                     <div>
-                        <h3>Available Roles</h3>
+                        <h3 class="font-bold mb-2">Available Counties</h3>
                         <ul id="availableRoles">
                             @foreach($roles as $role)
                                 @unless($user->roles->contains($role))
@@ -104,7 +104,7 @@
                     </div>
             
                     <div>
-                        <h3>Assigned Roles</h3>
+                        <h3 class="font-bold mb-2">Assigned Counties</h3>
                         <ul id="assignedRoles">
                             @foreach($user->roles as $role)
                                 <li data-id="{{ $role->id }}">{{ $role->name }}</li>
@@ -113,7 +113,7 @@
                     </div>
                 </div>
             
-                <button onclick="saveRoles()">Save Roles</button>
+                <button class="bg-blue-800 text-white p-4 rounded" onclick="saveRoles()">Save Counties</button>
             
                 <script>
                     new Sortable(availableRoles, {
@@ -151,7 +151,8 @@
                     }
                 </script>
                 
-            </div>
+                </div> <!-- Wrapper -->
+            </div> <!-- Col -->
 
     </div> <!-- End of row --> 
 
