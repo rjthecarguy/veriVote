@@ -25,7 +25,7 @@
              <div class="col-md-4 bg-gray-200 py-4 px-4 rounded" > <!-- Info col -->
 
                 <!-- Info box -->
-                <div class="p-[20px] bg-white/70 rounded font-bold">
+                <div class="p-[20px] bg-white/70 rounded font-bold shadow-2xl">
 
                     <p class="">Name: &nbsp;<span class="text-blue-600">{{$user->name}}</span></p>
                     <p class="mt-2">Email: &nbsp;<span class="text-blue-600">{{$user->email}}</span></p>
@@ -42,7 +42,7 @@
                 <div class="flex gap-4 mt-4">
 
                         <!-- Status control -->
-                        <div class="p-6 bg-white/50 rounded">
+                        <div class="p-6 bg-white/70 rounded shadow-2xl">
 
                             <label>Status:</label><br>
                             <div class="mb-2"></div>
@@ -59,7 +59,7 @@
                         </div> <!-- Control -->
 
                         <!-- Role control -->
-                        <div class="p-6 bg-white/50 rounded">
+                        <div class="p-6 bg-white/70 rounded shadow-2xl">
                                 <label>Role:</label><br>
                                 <div class="mb-2"></div>
                                 <label>
