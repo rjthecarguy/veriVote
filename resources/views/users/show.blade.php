@@ -18,7 +18,7 @@
 
         <div class ="row bg-gray-200 rounded"> <!-- Row -->
                         
-             <div class="col-md-4 py-4 px-2" > <!-- Info col -->
+             <div class="col-md-6 py-4 px-2" > <!-- Info col -->
                 <!-- Wrapper -->
                 <div class="border-solid border-2 border-gray-400 bg-gray-300 p-2 rounded">
 
@@ -86,7 +86,7 @@
             </div> <!-- Info col -->
 
             <!-- County col -->
-            <div class="col-md-8 py-4 px-2">  
+            <div class="col-md-6 py-4 px-2">  
                 <!-- Wrapper -->
                 <div class="border-solid border-2 border-gray-400 bg-gray-300 p-2 rounded">
 
