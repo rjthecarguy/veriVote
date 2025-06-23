@@ -8,9 +8,10 @@
 
 <x-app-layout>
 
-    <div class="container px-[20px]">
+    
+    <div class="container px-[20px] bg-white -mt-[25px] pt-[60px]">
 
-        <h2 class="text-3xl mt-4 mb-4">Manage User</h2>
+        <h2 class="text-3xl mb-4">Manage User</h2>
 
 
 
@@ -21,10 +22,10 @@
 
         <div class ="row"> <!-- Row -->
                         
-             <div class="col-md-4"> <!-- Info col -->
+             <div class="col-md-4 bg-blue-200 py-4 rounded" > <!-- Info col -->
 
                 <!-- Info box -->
-                <div class="ml-[30px] p-[30px] bg-white/50 rounded font-bold">
+                <div class="p-[30px] bg-white/50 rounded font-bold">
 
                     <p class="">Name: &nbsp;<span class="text-blue-600">{{$user->name}}</span></p>
                     <p class="mt-2">Email: &nbsp;<span class="text-blue-600">{{$user->email}}</span></p>
@@ -38,7 +39,7 @@
                     @method('PUT')
 
                 <!-- Control container -->    
-                <div class="flex gap-4 mt-4 px-[30px]">
+                <div class="flex gap-4 mt-4">
 
                         <!-- Status control -->
                         <div class="p-6 bg-white/50 rounded">
@@ -76,7 +77,7 @@
 
                 
                     <!-- Button container -->
-                    <div class="ml-[50px] mt-4">    
+                    <div class="mt-4">    
                             <button class="bg-blue-800 rounded p-4 text-white" type="submit">Save</button>
                     </div>
 
@@ -137,7 +138,7 @@
                             },
                             body: JSON.stringify({ roles: roleIds })
                         }).then(res => res.json())
-                          .then(data => alert(data.message));
+                        .then(data => alert(data.message));
                     }
                 </script>
                 
