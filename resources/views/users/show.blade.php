@@ -1,5 +1,5 @@
 <style>
-    ul { list-style: none; padding: 10px; border: 1px solid #ccc; min-height: 100px; width: 250px; margin-bottom: 20px; }
+    ul { list-style: none; padding: 10px; border: 1px solid #ccc; min-height: 100px; width: 200px; margin-bottom: 20px; }
     li { padding: 8px; background: #eee; margin-bottom: 4px; cursor: grab; }
     .roleContainer { display: flex; gap: 20px; }
 </style>
@@ -11,9 +11,10 @@
    
     <div class="container px-[20px] bg-white -mt-[25px] pt-[60px]">
 
-        <h2 class="text-3xl mb-4">Manage User</h2>
+       
 
-<div class="container">  <!-- Main container -->
+<div class="container bg-gray-200 pt-4 rounded">  <!-- Main container -->
+    <h2 class="text-3xl mb-4 font-bold">Manage User</h2>
 
         <div class ="row bg-gray-200 rounded"> <!-- Row -->
                         
