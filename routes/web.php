@@ -3,6 +3,7 @@
 use App\Http\Controllers\AdminController;
 use App\Http\Controllers\UserController;
 use App\Http\Controllers\ProfileController;
+use App\Http\Controllers\sbVoterController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Middleware\roleAdmin;
 use App\Http\Middleware\isActive;
@@ -18,7 +19,7 @@ Route::get('/admin', [AdminController::class, 'index'])->middleware(['auth',role
 
 Route::resource('users', UserController::class)->middleware(['auth',roleAdmin::class]);
 
-
+Route::get('/sbvoters/search', [SbVoterController::class, 'search'])->middleware('auth');
 
 Route::get('/dashboard', function () {
     return view('dashboard');
