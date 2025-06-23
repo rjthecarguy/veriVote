@@ -22,10 +22,10 @@
 
         <div class ="row"> <!-- Row -->
                         
-             <div class="col-md-4 bg-blue-200 py-4 rounded" > <!-- Info col -->
+             <div class="col-md-4 bg-gray-200 py-4 px-4 rounded" > <!-- Info col -->
 
                 <!-- Info box -->
-                <div class="p-[30px] bg-white/50 rounded font-bold">
+                <div class="p-[20px] bg-white/70 rounded font-bold">
 
                     <p class="">Name: &nbsp;<span class="text-blue-600">{{$user->name}}</span></p>
                     <p class="mt-2">Email: &nbsp;<span class="text-blue-600">{{$user->email}}</span></p>
@@ -78,7 +78,7 @@
                 
                     <!-- Button container -->
                     <div class="mt-4">    
-                            <button class="bg-blue-800 rounded p-4 text-white" type="submit">Save</button>
+                            <button class="bg-blue-800 rounded p-4 text-white" type="submit">Save User Info</button>
                     </div>
 
                 </form>
