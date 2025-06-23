@@ -8,7 +8,7 @@
 
 <x-app-layout>
 
-    
+   
     <div class="container px-[20px] bg-white -mt-[25px] pt-[60px]">
 
         <h2 class="text-3xl mb-4">Manage User</h2>
@@ -138,7 +138,16 @@
                             },
                             body: JSON.stringify({ roles: roleIds })
                         }).then(res => res.json())
-                        .then(data => alert(data.message));
+                        .then(data => {
+                                        Toastify({
+                                            text: data.message,
+                                            duration: 3000,
+                                            close: true,
+                                            gravity: "top",
+                                            position: "right",
+                                            backgroundColor: "#4CAF50", // green
+                                        }).showToast();
+                                    });
                     }
                 </script>
                 
