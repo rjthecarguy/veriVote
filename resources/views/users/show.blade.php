@@ -113,7 +113,7 @@
                     </div>
                 </div>
             
-                <button class="bg-blue-800 text-white p-4 rounded" onclick="saveRoles()">Save Counties</button>
+                <button class="bg-blue-800 text-white p-4 rounded mt-2" onclick="saveRoles()">Save Counties</button>
             
                 <script>
                     new Sortable(availableRoles, {
