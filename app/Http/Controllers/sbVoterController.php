@@ -45,10 +45,10 @@ class sbVoterController extends Controller
 
 
     // Execute query and get results
-    $results = $query->get();
+    $sbVoters = $query->get();
 
    
 
-    return response()->json($results); 
+    return view('voters.show')->with('sbVoters', $sbVoters); 
 }
 }

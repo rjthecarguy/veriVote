@@ -82,4 +82,4 @@ new DataTable('#example');
 
 </x-app-layout>
 
-<script>
+
