@@ -26,7 +26,8 @@
                             <label for="city" class="form-label">City</label>
                             <input type="text" class="form-control" id="city" name="city" placeholder="e.g. Riverside">
                         </div>
-                        <button type="submit" class="btn btn-primary">Search</button>
+                        <button type="submit" class="btn btn-primary mr-4">Search</button>
+                        <button type="reset" class="btn btn-secondary">Clear</button>
                     </form>
                 
                   
