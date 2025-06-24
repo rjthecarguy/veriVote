@@ -8,31 +8,46 @@ use App\Models\SbVoter;
 class sbVoterController extends Controller
 {
     public function search(Request $request)
+
 {
-    $query = SbVoter::query();
+    
 
-    if ($request->filled(strtoupper('name_last'))) {
-        $query->where('name_last', 'like', '%' . $request->name_last . '%');
-    }
+     $query = SbVoter::query();
 
-    if ($request->filled(strtoupper('name_first'))) {
-        $query->where('name_first', 'like', '%' . $request->name_first . '%');
-    }
+ 
+     $name_last = strtoupper($request->name_last);
+     $name_first = strtoupper($request->name_first);
+     $street = strtoupper($request->street);
+     $city = strtoupper($request->city);
 
-    if ($request->filled('house_number')) {
-        $query->where('house_number', $request->house_number);
-    }
 
-    if ($request->filled(strtoupper('street'))) {
-        $query->where('street', 'like', '%' . $request->street . '%');
-    }
+    $query->when($name_last, function ($q, $value) {
+        $q->where('name_last',  'like', '%' . $value . '%');
+    });
 
-    if ($request->filled(strtoupper('city'))) {
-        $query->where('city', 'like', '%' . $request->city . '%');
-    }
+
+    $query->when($name_first, function ($q, $value) {
+        $q->where('name_first', 'like', '%' . $value . '%');
+    });
+
+
+    $query->when($request->house_number, function ($q, $value) {
+        $q->where('house_number', $value);
+    });
+
+    $query->when($street, function ($q, $value) {
+        $q->where('street', 'like', '%' . $value .'%');
+    });
+
+
+    $query->when($city, function ($q, $value) {
+        $q->where('city', 'like', '%' . $value . '%');
+    });
 
     $results = $query->get();
 
-    return response()->json($results);
+   
+
+    return response()->json($results); 
 }
 }
