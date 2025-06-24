@@ -11,6 +11,11 @@ crossorigin="anonymous"></script>
     padding: 10px;
     margin-left: 10px;
     width: 80px;
+    margin-right: 10px;
+}
+
+#dt-search-0 {
+    margin-left: 10px;
 }
 
 .dt-column-order {
@@ -24,15 +29,19 @@ tr {
 table tr:nth-child(even) {
   background-color: lightgrey!important;
 }
+.min-h-screen {
+    background-color: white!important;
+}
+
 
 </style>
 
 <x-app-layout>
-    <div class="container px-[20px]">
+    <div class="container px-[20px] bg-white -mt-[25px] pt-[40px]">
 
         <h2 class="text-3xl mt-4 mb-[25px]">Manage Users</h2>
 
-    <table id="example" class="table table-striped w-[90%]">
+    <table id="example" class="table table-striped w-[90%] border">
         <thead>
             <tr class="bg-blue-100">
                 <th></th>

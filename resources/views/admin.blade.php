@@ -6,7 +6,13 @@ crossorigin="anonymous"></script>
 
 <link rel="stylesheet" href="https://cdn.datatables.net/2.3.2/css/dataTables.dataTables.min.css"/>
 
+
+
 <style>
+
+.min-h-screen {
+    background-color: white!important;
+}
 
 #dt-length-0 {
     padding: 10px;
