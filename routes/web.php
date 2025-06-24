@@ -16,7 +16,7 @@ Route::get('/', function () {
 Route::get('/users/{user}/roles', [UserController::class, 'editRoles']);
 Route::post('/users/{user}/roles', [UserController::class, 'updateRoles']);
 
-Route::get('/counties', [CountyController::class, 'index'])->middleware(['auth',roleAdmin::class]);
+Route::get('/counties', [CountyController::class, 'index'])->middleware(['auth',roleAdmin::class])->name('counties.index');
 
 Route::get('/admin', [AdminController::class, 'index'])->middleware(['auth',roleAdmin::class])->name('admin');
 

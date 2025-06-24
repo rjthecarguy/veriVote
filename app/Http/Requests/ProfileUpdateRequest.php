@@ -19,7 +19,8 @@ class ProfileUpdateRequest extends FormRequest
             'name' => ['required', 'string', 'max:255'],
             'role' => [ 'string', 'max:255'],
             'phone' => [ 'string', 'max:255'],
-            'county' => [ 'integer'],
+            'county_id' => [ 'integer'],
+            'countySelect' => ['integer'],
             'active' => [ 'integer'],
             'email' => [
                 'required',

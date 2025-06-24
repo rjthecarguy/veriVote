@@ -1,3 +1,12 @@
+<style>
+
+.min-h-screen {
+    background-color: white!important;
+}
+
+
+</style>
+
 <x-app-layout>
 
     <div class="container">

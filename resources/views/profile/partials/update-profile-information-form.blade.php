@@ -59,11 +59,24 @@
 
 
 
+       
+
+        <label for="role">County:</label>
+            <select class="w-[200px] ml-2 px-2" name="countySelect" id="countySelect">
+                @foreach($counties as $county)
+                    <option value="{{$county->id}}" {{$county->id == $user->county_id ? 'selected' : ''}}>{{$county->name}}</option> 
+                @endforeach
+            </select>
+
+            <script>
+                document.getElementById('countySelect').value = {{$user->county_id}}; // selects "User"
+              </script>
+    
+
         @if ($user->role == 'admin')
         <div class="mt-4 mb-4">
             <p>Role:&nbsp;  <b>Admin</b></p>
         </div>
-
       
 
         @else
