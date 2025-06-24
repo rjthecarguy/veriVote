@@ -41,7 +41,7 @@ table tr:nth-child(even) {
 
     <div class="container">
 
-        <h2 class="text-2xl font-bold">San Bernardino Results</h2>
+        <h2 class="text-2xl font-bold mt-[30px] mb-4">San Bernardino Results</h2>
 
         <table id="sbVoters" class="table table-striped w-[90%] border">
             <thead>

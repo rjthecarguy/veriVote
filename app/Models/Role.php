@@ -12,4 +12,10 @@ class Role extends Model
     {
         return $this->belongsToMany(User::class);
     }
+
+    public function usersWithThisCounty()
+{
+    return $this->hasMany(User::class, 'county', 'name');
+}
+
 }

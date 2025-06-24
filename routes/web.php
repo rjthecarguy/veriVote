@@ -4,6 +4,7 @@ use App\Http\Controllers\AdminController;
 use App\Http\Controllers\UserController;
 use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\sbVoterController;
+use App\Http\Controllers\CountyController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Middleware\roleAdmin;
 use App\Http\Middleware\isActive;
@@ -14,6 +15,8 @@ Route::get('/', function () {
 
 Route::get('/users/{user}/roles', [UserController::class, 'editRoles']);
 Route::post('/users/{user}/roles', [UserController::class, 'updateRoles']);
+
+Route::get('/counties', [CountyController::class, 'index'])->middleware(['auth',roleAdmin::class]);
 
 Route::get('/admin', [AdminController::class, 'index'])->middleware(['auth',roleAdmin::class])->name('admin');
 
