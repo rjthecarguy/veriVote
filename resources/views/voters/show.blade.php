@@ -51,12 +51,10 @@ table tr:nth-child(even) {
     <table class="table-auto w-full border-collapse border border-gray-300">
         <thead class="bg-gray-100">
             <tr>
-                <th class="border px-4 py-2"></th>
-                <th class="border px-4 py-2">Last Name</th>
-                <th class="border px-4 py-2">First Name</th>
-                <th class="border px-4 py-2">House Number</th>
-                <th class="border px-4 py-2">Street</th>
-                <th class="border px-4 py-2">City</th>
+                <th class="border px-4 py-2 w-[50px]"></th>
+                <th class="border px-4 py-2">Name</th>
+                <th class="border px-4 py-2 ">Address</th>
+               
             </tr>
         </thead>
         <tbody>
@@ -65,21 +63,20 @@ table tr:nth-child(even) {
                     <td class="border px-4 py-2 text-center">
                         <button class="toggle-row" data-id="{{ $voter->id }}"><span class="text-green-500 text-2xl icon"></span></button>
                     </td>
-                    <td class="border px-4 py-2">{{ $voter->name_last }}</td>
-                    <td class="border px-4 py-2">{{ $voter->name_first }}</td>
-                    <td class="border px-4 py-2">{{ $voter->house_number }}</td>
-                    <td class="border px-4 py-2">{{ $voter->street }}</td>
-                    <td class="border px-4 py-2">{{ $voter->city}}</td>
+                    <td class="border px-4 py-2">{{ $voter->name_last }},<br> {{$voter->name_first}}</td>
+                    <td class="border px-4 py-2">{{ $voter->house_number }}&nbsp;{{ $voter->street }},&nbsp; {{ $voter->city}} </td>
+               
                 </tr>
                 <tr class="details-row hidden" id="details-{{ $voter->id }}">
                     <td colspan="3" class="px-4 py-2 bg-gray-100 text-sm text-gray-700">
                         <strong>Details:</strong><br>
-                        Party: {{ $voter->party}}<br>
-                        Gender: {{ $voter->gender}}<br>
-                        Birth Date: {{ \Carbon\Carbon::parse($voter->birth_date)->format('Y-m-d') }}
-                        <br>
-                        Birth Place: {{ $voter->birth_place}}<br>
-                      
+                        <div class="pl-4">
+                            Party: {{ $voter->party}}<br>
+                            Gender: {{ $voter->gender}}<br>
+                            Birth Date: {{ \Carbon\Carbon::parse($voter->birth_date)->format('Y-m-d') }}
+                            <br>
+                            Birth Place: {{ $voter->birth_place}}<br>
+                        </div>    
                     </td>
                 </tr>
             @empty
