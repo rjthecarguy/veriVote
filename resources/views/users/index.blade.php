@@ -44,6 +44,7 @@ table tr:nth-child(even) {
     <table id="example" class="table table-striped w-[90%] border">
         <thead>
             <tr class="bg-blue-100">
+              
                 <th></th>
                 <th>Name</th>
                 <th>Email</th>
@@ -55,6 +56,7 @@ table tr:nth-child(even) {
 
             @forelse($users as $user)
             <tr class="hover:bg-blue-200">
+               
                 <td class="text-center text-blue-900 hover: cursor-pointer hover:font-bold"><a href="{{route('users.show', $user->id)}}">Edit</a></td>
                 <td>{{$user->name}}</td>
                 <td>{{$user->email}}</td>
