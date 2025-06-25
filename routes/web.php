@@ -8,6 +8,7 @@ use App\Http\Controllers\CountyController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Middleware\roleAdmin;
 use App\Http\Middleware\isActive;
+use App\Http\Middleware\hasCounty;
 
 Route::get('/', function () {
     return view('welcome');
@@ -26,7 +27,7 @@ Route::get('/sbvoters/search', [SbVoterController::class, 'search'])->middleware
 
 Route::get('/dashboard', function () {
     return view('dashboard');
-})->middleware(['auth', 'verified', isActive::class])->name('dashboard');
+})->middleware(['auth', 'verified', hasCounty::class, isActive::class])->name('dashboard');
 
 Route::middleware('auth')->group(function () {
     Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');

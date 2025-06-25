@@ -19,13 +19,13 @@ class ProfileController extends Controller
     {
 
         $counties = Role::all();
-        $rolesList = Auth::user()->roles;
+        $countyList = Auth::user()->roles;
     
 
         return view('profile.edit', [
             'user' => $request->user(),
         ])->with('counties', $counties)
-          ->with('rolesList', $rolesList);
+          ->with('countyList', $countyList);
     }
 
     /**

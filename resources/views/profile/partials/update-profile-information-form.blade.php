@@ -19,11 +19,15 @@
         @csrf
         @method('patch')
 
+        <!-- Edit name -----------------  -->
+
         <div>
             <x-input-label for="name" :value="__('Name')" />
             <x-text-input id="name" name="name" type="text" class="mt-1 block w-full" :value="old('name', $user->name)" required autofocus autocomplete="name" />
             <x-input-error class="mt-2" :messages="$errors->get('name')" />
         </div>
+
+        <!-- Edit phone -------------------- -->
 
         <div>
             <x-input-label for="phone" :value="__('Phone')" />
@@ -31,9 +35,7 @@
             <x-input-error class="mt-2" :messages="$errors->get('phone')" />
         </div>
         
-        @foreach($rolesList as $r)
-            {{$r->name}}
-        @endforeach
+       <!-- Edit email ------------------- -->
 
         <div>
             <x-input-label for="email" :value="__('Email')" />
@@ -60,20 +62,23 @@
         </div>
 
 
-
+        <!-- Select default county -------------- -->
        
-
+        @if($countyList->isEmpty())
+        <p class="text-red-400 font-bold">You have no counties assigned to your profile.&nbsp;Please contact your manager.</p>
+        @else
         <label for="role">County:</label>
             <select class="w-[200px] ml-2 px-2" name="countySelect" id="countySelect">
-                @foreach($counties as $county)
+                @foreach($countyList as $county)
                     <option value="{{$county->id}}" {{$county->id == $user->county_id ? 'selected' : ''}}>{{$county->name}}</option> 
                 @endforeach
             </select>
 
+            <!-- Set select to default county -->
             <script>
                 document.getElementById('countySelect').value = {{$user->county_id}}; // selects "User"
               </script>
-    
+        @endif
 
         @if ($user->role == 'admin')
         <div class="mt-4 mb-4">
