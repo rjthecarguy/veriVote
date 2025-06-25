@@ -19,10 +19,13 @@ class ProfileController extends Controller
     {
 
         $counties = Role::all();
+        $rolesList = Auth::user()->roles;
+    
 
         return view('profile.edit', [
             'user' => $request->user(),
-        ])->with('counties', $counties);
+        ])->with('counties', $counties)
+          ->with('rolesList', $rolesList);
     }
 
     /**
@@ -37,6 +40,8 @@ class ProfileController extends Controller
             $request->user()->email_verified_at = null;
         }
 
+       
+        
         Auth::user()->county_id = $request->countySelect;
         $request->user()->save();
 
