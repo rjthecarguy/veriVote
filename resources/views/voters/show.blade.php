@@ -43,8 +43,14 @@ table tr:nth-child(even) {
 
     <div class="container">
 
-        <h2 class="text-2xl font-bold mt-[30px] mb-4">San Bernardino Results</h2>
+         
+            <x-nav-link class="md:hidden -mb-[40px] mt-1" :href="route('dashboard')" :active="request()->routeIs('dashboard')">
+                <span class="text-blue-600">{{ __('Back to Dashboard') }}</span>
+            </x-nav-link>
+        
 
+        <h2 class="text-2xl font-bold mt-[30px] mb-4">San Bernardino Results</h2>
+        
        
 
 
