@@ -15,6 +15,9 @@ Route::get('/', function () {
     return view('welcome');
 });
 
+Route::resource('surveys', \App\Http\Controllers\SurveyController::class);
+
+
 Route::get('/users/{user}/roles', [UserController::class, 'editRoles']);
 Route::post('/users/{user}/roles', [UserController::class, 'updateRoles']);
 
