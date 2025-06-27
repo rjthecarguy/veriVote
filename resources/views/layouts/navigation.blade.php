@@ -50,6 +50,14 @@
 
                     @endif
 
+                    @if(Auth::user()->role == 'admin')
+                    <x-dropdown-link :href="route('surveys.index')">
+                        {{ __('Manage Surveys') }}
+                    </x-dropdown-link>
+                    @else
+
+                    @endif
+
 
                         <!-- Authentication -->
                         <form method="POST" action="{{ route('logout') }}">
