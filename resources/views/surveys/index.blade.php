@@ -26,6 +26,9 @@
                     <button class="font-bold text-red-600" type="submit">Delete</button>
                 </form>
                 </td>
+                <td>
+                    <a href="{{ route('surveys.questions.create', $survey->id) }}">Create Question</a>
+                </td>
             </tr>
         @endforeach
     </tfoot>

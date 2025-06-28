@@ -1,3 +1,5 @@
+<x-app-layout>
+
 <form action="{{ route('surveys.questions.store', $survey) }}" method="POST">
     @csrf
     <label>Question:</label>
@@ -25,3 +27,5 @@ document.getElementById('question-type').addEventListener('change', function () 
         this.value === 'multiple_choice' ? 'block' : 'none';
 });
 </script>
+
+</x-app-layout>
