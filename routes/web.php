@@ -10,9 +10,17 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Middleware\roleAdmin;
 use App\Http\Middleware\isActive;
 use App\Http\Middleware\hasCounty;
+use App\Http\Controllers\SurveyQuestionController;
 
 Route::get('/', function () {
     return view('welcome');
+});
+
+Route::resource('surveys.questions', SurveyQuestionController::class);
+
+Route::prefix('surveys/{survey}')->group(function () {
+    Route::get('/questions/create', [SurveyQuestionController::class, 'create'])->name('surveys.questions.create');
+    Route::post('/questions', [SurveyQuestionController::class, 'store'])->name('surveys.questions.store');
 });
 
 Route::resource('surveys', \App\Http\Controllers\SurveyController::class);
