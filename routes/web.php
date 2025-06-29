@@ -7,6 +7,8 @@ use App\Http\Controllers\sbVoterController;
 use App\Http\Controllers\CountyController;
 use App\Http\Controllers\DashboardController;
 use App\Http\Controllers\SurveyController;
+use App\Http\Controllers\SurveyQuestionController;
+use App\Http\Controllers\SurveyAnswerController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Middleware\roleAdmin;
 use App\Http\Middleware\isActive;
@@ -16,6 +18,13 @@ use App\Http\Middleware\hasCounty;
 Route::get('/', function () {
     return view('welcome');
 });
+
+
+Route::get('/surveys/{survey}/questions/create', [SurveyQuestionController::class, 'create'])->name('survey-questions.create');
+Route::post('/survey-questions', [SurveyQuestionController::class, 'store'])->name('survey-questions.store');
+
+Route::post('/surveys/{survey}/submit', [SurveyAnswerController::class, 'store'])->name('surveys.submit');
+
 
 Route::resource('surveys', SurveyController::class);
 
