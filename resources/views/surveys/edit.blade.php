@@ -1,6 +1,6 @@
 <x-app-layout>
 
-@section('content')
+
 <div class="container">
     <h1>Edit Survey</h1>
     <form action="{{ route('surveys.update', $survey) }}" method="POST">
@@ -20,5 +20,5 @@
         <a href="{{ route('surveys.index') }}" class="btn btn-secondary">Cancel</a>
     </form>
 </div>
-@endsection
+
 </x-app-layout>
