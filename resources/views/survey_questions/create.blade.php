@@ -22,10 +22,19 @@
             </select>
         </div>
 
-        <div class="mb-3" id="optionsBox" style="display:none;">
-            <label>Options (One per line)</label>
-            <textarea name="options[]" class="form-control" rows="4"></textarea>
-        </div>
+        <div id="optionFields">
+    <div><input type="text" name="options[]" class="form-control mb-2"></div>
+</div>
+<button type="button" onclick="addOption()">+ Add Option</button>
+
+<script>
+function addOption() {
+    const div = document.createElement('div');
+    div.innerHTML = '<input type="text" name="options[]" class="form-control mb-2">';
+    document.getElementById('optionFields').appendChild(div);
+}
+</script>
+
 
         <button class="btn btn-success">Add Question</button>
     </form>
