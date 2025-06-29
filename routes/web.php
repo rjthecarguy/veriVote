@@ -6,16 +6,18 @@ use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\sbVoterController;
 use App\Http\Controllers\CountyController;
 use App\Http\Controllers\DashboardController;
+use App\Http\Controllers\SurveyController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Middleware\roleAdmin;
 use App\Http\Middleware\isActive;
 use App\Http\Middleware\hasCounty;
-use App\Http\Controllers\SurveyQuestionController;
+
 
 Route::get('/', function () {
     return view('welcome');
 });
 
+Route::resource('surveys', SurveyController::class);
 
 
 Route::get('/users/{user}/roles', [UserController::class, 'editRoles']);
