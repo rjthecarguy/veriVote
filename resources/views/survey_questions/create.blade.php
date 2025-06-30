@@ -1,31 +1,28 @@
+<x-app-layout>
 
-
-
-
-
-<div class="container">
-    <h2>Add Question to "{{ $survey->title }}"</h2>
+<div class="container px-4">
+    <h2 class="text-3xl text-blue-700 mb-4 mt-4 font-bold">Add Question to "{{ $survey->title }}"</h2>
     <form method="POST" action="{{ route('survey-questions.store') }}">
         @csrf
         <input type="hidden" name="survey_id" value="{{ $survey->id }}">
 
         <div class="mb-3">
-            <label>Question Text</label>
-            <input type="text" name="question_text" class="form-control" required>
+            <label class="mb-2">Question Text</label>
+            <input type="text" name="question_text" class="form-control w-[60%]" required>
         </div>
 
         <div class="mb-3">
-            <label>Question Type</label>
-            <select name="question_type" class="form-control" id="questionType">
+            <label class="mb-2">Question Type</label>
+            <select name="question_type" class="form-control w-[200px]" id="questionType">
                 <option value="open_ended">Open Ended</option>
                 <option value="multiple_choice">Multiple Choice</option>
             </select>
         </div>
 
-        <div id="optionFields">
+        <div id="optionFields" class="mt-4 mb-4">
     <div><input type="text" name="options[]" class="form-control mb-2"></div>
 </div>
-<button type="button" onclick="addOption()">+ Add Option</button>
+<button type="button" class="mr-4" onclick="addOption()">+ Add Option</button>
 
 <script>
 
@@ -68,3 +65,4 @@ function addOption() {
     });
 </script>
 
+</x-app-layout>
