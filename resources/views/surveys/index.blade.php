@@ -2,7 +2,7 @@
 
 
 <div class="container">
-    <h1>Surveys</h1>
+    <h1 class="text-4xl mb-4 mt-4">Surveys</h1>
     <a href="{{ route('surveys.create') }}" class="btn btn-primary mb-3">Create New Survey</a>
 
     @if(session('success'))
