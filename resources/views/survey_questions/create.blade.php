@@ -28,11 +28,32 @@
 <button type="button" onclick="addOption()">+ Add Option</button>
 
 <script>
+
 function addOption() {
     const div = document.createElement('div');
     div.innerHTML = '<input type="text" name="options[]" class="form-control mb-2">';
     document.getElementById('optionFields').appendChild(div);
 }
+
+
+ document.addEventListener('DOMContentLoaded', function() {
+    const select = document.getElementById('questionType');
+    const toggleDiv = document.getElementById('optionFields');
+
+    function toggleVisibility() {
+      if (select.value === 'multiple_choice') {
+        toggleDiv.style.display = 'block';
+      } else {
+        toggleDiv.style.display = 'none';
+      }
+    }
+
+    select.addEventListener('change', toggleVisibility);
+
+    // Optional: run on page load to match initial selection
+    toggleVisibility();
+  });
+
 </script>
 
 
