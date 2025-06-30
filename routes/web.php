@@ -20,17 +20,17 @@ Route::get('/', function () {
 });
 
 
-Route::get('/surveys/{survey}/questions/create', [SurveyQuestionController::class, 'create'])->name('survey-questions.create');
-Route::post('/survey-questions', [SurveyQuestionController::class, 'store'])->name('survey-questions.store');
+Route::get('/surveys/{survey}/questions/create', [SurveyQuestionController::class, 'create'])->name('survey-questions.create')->middleware(['auth',roleAdmin::class]);
+Route::post('/survey-questions', [SurveyQuestionController::class, 'store'])->name('survey-questions.store')->middleware(['auth',roleAdmin::class]);
 
-Route::post('/surveys/{survey}/submit', [SurveyAnswerController::class, 'store'])->name('surveys.submit');
-
-
-Route::resource('surveys', SurveyController::class);
+Route::post('/surveys/{survey}/submit', [SurveyAnswerController::class, 'store'])->name('surveys.submit')->middleware(['auth',roleAdmin::class]);
 
 
-Route::get('/users/{user}/roles', [UserController::class, 'editRoles']);
-Route::post('/users/{user}/roles', [UserController::class, 'updateRoles']);
+Route::resource('surveys', SurveyController::class)->middleware(['auth',roleAdmin::class]);
+
+
+Route::get('/users/{user}/roles', [UserController::class, 'editRoles'])->middleware(['auth',roleAdmin::class]);
+Route::post('/users/{user}/roles', [UserController::class, 'updateRoles'])->middleware(['auth',roleAdmin::class]);
 
 Route::get('/dashboard', [DashboardController::class, 'index'])->middleware(['auth',hasCounty::class])->name('dashboard');
 
