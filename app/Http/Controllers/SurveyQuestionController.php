@@ -16,9 +16,16 @@ class SurveyQuestionController extends Controller
         return("OK" . $survey->id);
     }
 
-     public function show( $surveyID, $questionID) {
+     public function show( Survey $survey , SurveyQuestion $question) {
 
-        return($questionID . $surveyID);
+        return($question);
+    }
+
+      public function edit($id) {
+
+        $question = SurveyQuestion::findOrFail($id);
+
+        return($question);
     }
 
     public function create(Survey $survey)
@@ -51,8 +58,5 @@ class SurveyQuestionController extends Controller
         return redirect()->route('surveys.show', $validated['survey_id'])->with('success', 'Question added.');
     }
 
-    public function edit(Survey $survey, SurveyQuestion $question){
-        dd($question->id);
-
-    }
+   
 }

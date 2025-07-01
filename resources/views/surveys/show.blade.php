@@ -25,7 +25,7 @@
 
     <tr>
         <td>{{$question->question_text}}</td>
-        <td><a href="" class="btn btn-info mr-2">Edit</a> <a href="" class="btn btn-danger">Delete</a></td>
+        <td><a href="{{route('questions.edit',$question->id)}}" class="btn btn-info mr-2">Edit</a> <a href="" class="btn btn-danger">Delete</a></td>
     </tr>
     @endforeach
 
@@ -37,6 +37,7 @@
 
      <a href="{{ route('surveys.edit', $survey) }}" class="btn btn-warning">Edit</a>
     <a href="{{ route('surveys.index') }}" class="btn btn-secondary">Back</a>
+    <a href="{{ route('survey-questions.create', $survey->id) }}" class="btn btn-info">Add Question</a>
 </div>
 
 </x-app-layout>
