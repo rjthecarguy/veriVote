@@ -10,10 +10,23 @@ use Illuminate\Http\Request;
 
 class SurveyQuestionController extends Controller
 {
+
+    public function index(Survey $survey) {
+
+        return("OK" . $survey->id);
+    }
+
+     public function show( $surveyID, $questionID) {
+
+        return($questionID . $surveyID);
+    }
+
     public function create(Survey $survey)
     {
         return view('survey_questions.create', compact('survey'));
     }
+
+
 
     public function store(Request $request)
     {
@@ -36,5 +49,10 @@ class SurveyQuestionController extends Controller
         }
 
         return redirect()->route('surveys.show', $validated['survey_id'])->with('success', 'Question added.');
+    }
+
+    public function edit(Survey $survey, SurveyQuestion $question){
+        dd($question->id);
+
     }
 }

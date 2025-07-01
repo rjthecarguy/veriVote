@@ -19,7 +19,9 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-
+Route::get('/surveys/{survey}/questions/{question}', [SurveyQuestionController::class, 'show']);
+Route::get('/surveys/{survey}/questions', [SurveyQuestionController::class, 'index'])->name('surveys.survey-questions')->middleware(['auth',roleAdmin::class]);
+Route::get('/surveys/{survey}/questions/{question}/edit', [SurveyQuestionController::class, 'edit'])->name('surveys.survey-questions.edit')->middleware(['auth',roleAdmin::class]);
 Route::get('/surveys/{survey}/questions/create', [SurveyQuestionController::class, 'create'])->name('survey-questions.create')->middleware(['auth',roleAdmin::class]);
 Route::post('/survey-questions', [SurveyQuestionController::class, 'store'])->name('survey-questions.store')->middleware(['auth',roleAdmin::class]);
 
