@@ -15,7 +15,7 @@ class SurveyQuestion extends Model
 
     public function options()
     {
-        return $this->hasMany(SurveyOption::class);
+        return $this->hasMany(QuestionOption::class);
     }
 
     public function answers()

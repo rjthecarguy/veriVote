@@ -3,7 +3,7 @@
 namespace App\Http\Controllers;
 use App\Models\Survey;
 use App\Models\SurveyQuestion;
-use App\Models\SurveyOption;
+use App\Models\QuestionOption;
 
 
 
@@ -79,12 +79,16 @@ class SurveyQuestionController extends Controller
         $question = SurveyQuestion::create($validated);
 
         if ($validated['question_type'] === 'multiple_choice' && $request->has('options')) {
+                
             foreach ($request->options as $text) {
-                SurveyOption::create([
+                
+                QuestionOption::create([
                     'survey_question_id' => $question->id,
                     'option_text' => $text
                 ]);
             }
+
+            
         }
 
         return redirect()->route('surveys.show', $validated['survey_id'])->with('success', 'Question added.');
