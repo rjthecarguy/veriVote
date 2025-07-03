@@ -6,6 +6,7 @@ use App\Models\SurveyQuestion;
 use App\Models\SurveyOption;
 
 
+
 use Illuminate\Http\Request;
 
 class SurveyQuestionController extends Controller
@@ -72,6 +73,8 @@ class SurveyQuestionController extends Controller
             'question_type' => 'required|in:multiple_choice,open_ended',
             'options' => 'array'
         ]);
+
+    
 
         $question = SurveyQuestion::create($validated);
 

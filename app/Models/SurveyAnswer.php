@@ -7,7 +7,6 @@ use Illuminate\Database\Eloquent\Model;
 class SurveyAnswer extends Model
 {
     protected $fillable = [
-        'user_id',
         'survey_id',
         'survey_question_id',
         'survey_option_id',
@@ -29,8 +28,6 @@ class SurveyAnswer extends Model
         return $this->belongsTo(Survey::class);
     }
 
-    public function user()
-    {
-        return $this->belongsTo(User::class);
-    }
+   
+    
 }
