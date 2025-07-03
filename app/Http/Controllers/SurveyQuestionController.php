@@ -18,14 +18,41 @@ class SurveyQuestionController extends Controller
 
      public function show( Survey $survey , SurveyQuestion $question) {
 
-        return($question);
+        return($request);
     }
+
+    public function update(Request $request, SurveyQuestion $question)
+{
+
+
+   // Validate input
+     $validated = $request->validate([
+        'question_text' => 'string|max:255',
+        'question_type' => 'in:multiple_choice,open_ended',
+    ]);  
+
+    
+
+    // Update question
+    $question->update($validated);
+   Route::get('/surveys/{survey}', [SurveyController::class, 'index'])->name('surveys.index');
+
+  /*   // Optionally update options (if applicable)
+    if ($request->question_type === 'multiple_choice' && $request->has('options')) {
+        $question->options()->delete(); // remove old
+        foreach ($request->options as $text) {
+            $question->options()->create(['option_text' => $text]);
+        }
+    } */
+
+   
+}
 
       public function edit($id) {
 
         $question = SurveyQuestion::findOrFail($id);
 
-        return($question);
+        return view('survey_questions.edit', compact('question'));
     }
 
     public function create(Survey $survey)
@@ -37,6 +64,8 @@ class SurveyQuestionController extends Controller
 
     public function store(Request $request)
     {
+
+    
         $validated = $request->validate([
             'survey_id' => 'required|exists:surveys,id',
             'question_text' => 'required|string',
