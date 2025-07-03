@@ -35,7 +35,7 @@ class SurveyQuestionController extends Controller
 
     // Update question
     $question->update($validated);
-   Route::get('/surveys/{survey}', [SurveyController::class, 'index'])->name('surveys.index');
+  return redirect()->route('surveys.show', $question->survey_id);
 
   /*   // Optionally update options (if applicable)
     if ($request->question_type === 'multiple_choice' && $request->has('options')) {

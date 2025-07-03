@@ -19,7 +19,7 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-
+//Route::get('/surveys/{survey}', [SurveyController::class, 'show'])->name('surveys.show');
 Route::put('/questions/{question}', [SurveyQuestionController::class, 'update'])->name('questions.update');
 Route::get('/questions/{id}/edit', [SurveyQuestionController::class, 'edit'])->name('questions.edit');
 Route::get('/surveys/{survey}/questions', [SurveyQuestionController::class, 'index'])->name('surveys.survey-questions')->middleware(['auth',roleAdmin::class]);
