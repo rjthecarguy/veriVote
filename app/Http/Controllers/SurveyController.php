@@ -8,17 +8,22 @@ use App\Models\Survey;
 
 class SurveyController extends Controller
 {
+
+    // Show all surveys in standard table
     public function index()
     {
+        // Get all surveys and return the view
         $surveys = Survey::all();
         return view('surveys.index', compact('surveys'));
     }
 
+    // Create new survey - return create view
     public function create()
     {
         return view('surveys.create');
     }
 
+    // Get data from create view and store new suvy
     public function store(Request $request)
     {
         Survey::create($request->validate([
@@ -26,19 +31,24 @@ class SurveyController extends Controller
             'description' => 'nullable|string',
         ]));
 
+        // Back to index 
         return redirect()->route('surveys.index')->with('success', 'Survey created.');
+    
     }
-
+    
+   // Show a single survey title
     public function show(Survey $survey)
     {
         return view('surveys.show', compact('survey'));
     }
 
+    // Edit survey title
     public function edit(Survey $survey)
     {
         return view('surveys.edit', compact('survey'));
     }
 
+    // Update survey title
     public function update(Request $request, Survey $survey)
     {
         $survey->update($request->validate([
@@ -49,6 +59,7 @@ class SurveyController extends Controller
         return redirect()->route('surveys.index')->with('success', 'Survey updated.');
     }
 
+    // Delete survey
     public function destroy(Survey $survey)
     {
         $survey->delete();

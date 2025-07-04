@@ -3,7 +3,28 @@
 
 <div class="container">
     <h1 class="text-4xl mb-4 mt-4">Surveys</h1>
-    <a href="{{ route('surveys.create') }}" class="btn btn-primary mb-3">Create New Survey</a>
+
+    <!-- <a href="{{ route('surveys.create') }}" class="btn btn-primary mb-3">Create New Survey</a>-->
+
+    <div x-data= "{open : false}">
+        <button @click = "open = true" class="btn btn-primary mb-4">Create New Survey</button>
+
+        <div x-show="open" class="fixed inset-0 flex items-center bg-gray-900 justify-center bg-opacity-50">
+                <div class="bg-white shadow-md p-6 rounded-lg w-full max-w-md">
+                    <h3 class="text-lg font-semibold mb-4">New Survey</h3>
+
+                        <form enctype="multipart/form-data">
+                            @csrf
+                            <label for="title" class="block font-semibold">Title</label>
+                            <input required type="text" id="title"name="title" class="mb-2 block w-full"/>
+                                <button type="submit" class="btn btn-primary">Submit</button>
+                                <button @click = "open = false" class="btn btn-secondary">Cancel</button>
+                        </form>
+                </div>
+        </div>
+
+    </div>
+
 
     @if(session('success'))
         <div id="alert-box" class="alert alert-success">{{ session('success') }}</div>
@@ -51,5 +72,7 @@
         }
     }, 3000);
 </script>
+
+
 
 </x-app-layout>
