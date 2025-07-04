@@ -1,7 +1,7 @@
 <x-app-layout>
 
 
-<div class="container">
+<div class="container" >
     <h1 class="text-4xl mb-4 mt-4">Surveys</h1>
 
     <!-- <a href="{{ route('surveys.create') }}" class="btn btn-primary mb-3">Create New Survey</a>-->
@@ -13,7 +13,9 @@
                 <div class="bg-white shadow-md p-6 rounded-lg w-full max-w-md">
                     <h3 class="text-lg font-semibold mb-4">New Survey</h3>
 
-                        <form enctype="multipart/form-data">
+                        <form enctype="multipart/form-data"
+                            method = "POST"
+                            action="{{route('surveys.store')}}">
                             @csrf
                             <label for="title" class="block font-semibold">Title</label>
                             <input required type="text" id="title"name="title" class="mb-2 block w-full"/>
