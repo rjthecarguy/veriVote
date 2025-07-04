@@ -27,17 +27,19 @@ tr {
 }
 
 table tr:nth-child(even) {
-  background-color: lightgrey!important;
+  background-color: lightcoral!important;
 }
-.min-h-screen {
-    background-color: white!important;
-}
+
+/* Uncomment for background 
+.XXXmin-h-screen {
+    Xbackground-color: white!important;
+} */
 
 
 </style>
 
 <x-app-layout>
-    <div class="container px-[20px] bg-white -mt-[25px] pt-[40px]">
+    <div class="container px-[20px] -mt-[25px] pt-[40px]">
 
         <h2 class="text-3xl mt-4 mb-[25px]">Manage Users</h2>
 

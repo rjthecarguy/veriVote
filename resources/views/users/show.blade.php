@@ -9,11 +9,11 @@
 <x-app-layout>
 
    
-    <div class="container px-[20px] bg-white -mt-[25px] pt-[60px]">
+    <div class="container px-[20px] -mt-[25px] pt-[60px]">
 
        
 
-<div class="container bg-gray-200 pt-4 rounded">  <!-- Main container -->
+<div class="container bg-gray-200 pt-4 rounded shadow-lg">  <!-- Main container -->
     <h2 class="text-3xl mb-4 font-bold">Manage User</h2>
 
         <div class ="row bg-gray-200 rounded"> <!-- Row -->
