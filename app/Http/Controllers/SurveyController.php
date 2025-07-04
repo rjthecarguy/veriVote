@@ -26,15 +26,17 @@ class SurveyController extends Controller
     // Get data from create view and store new suvy
     public function store(Request $request)
     {
-        dd($request);
+    
 
-      /*   Survey::create($request->validate([
-            'title' => 'required|string|max:255',
+        $validated = $request->validate([
+             'title' => 'required|string|max:255',
             'description' => 'nullable|string',
-        ]));
+        ]);
+
+         Survey::create($validated);
 
         // Back to index 
-        return redirect()->route('surveys.index')->with('success', 'Survey created.'); */
+        return redirect()->route('surveys.index')->with('success', 'Survey created.'); 
     
     }
 

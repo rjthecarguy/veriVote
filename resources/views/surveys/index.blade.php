@@ -19,7 +19,11 @@
                             @csrf
                             <label for="title" class="block font-semibold">Title</label>
                             <input required type="text" id="title"name="title" class="mb-2 block w-full"/>
-                                <button type="submit" class="btn btn-primary">Submit</button>
+                             
+                            <label for="description" class="block font-semibold">Title</label>
+                            <input required type="text" id="description" name="description" class="mb-2 block w-full"/>
+
+                            <button type="submit" class="btn btn-primary">Submit</button>
                                 <button @click = "open = false" class="btn btn-secondary">Cancel</button>
                         </form>
                 </div>
