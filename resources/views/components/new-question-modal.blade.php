@@ -7,7 +7,7 @@
 
     
             <!-- Modal main div -->
-            <div x-show="open" class="fixed inset-0 flex items-center bg-gray-900 justify-center bg-opacity-50">
+            <div x-cloak x-show="open" class="fixed inset-0 flex items-center bg-gray-900 justify-center bg-opacity-50">
                
                 <!-- Inner MODAL div -->
                 <div class="bg-white shadow-md p-6 rounded-lg w-full max-w-md">
