@@ -36,7 +36,8 @@ class SurveyController extends Controller
          Survey::create($validated);
 
         // Back to index 
-        return redirect()->route('surveys.index')->with('success', 'Survey created.'); 
+       // return redirect()->route('surveys.index')->with('success', 'Survey created.'); 
+       return redirect()->back()->with('success', 'Survey created.'); 
     
     }
 
