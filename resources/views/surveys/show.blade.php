@@ -1,5 +1,8 @@
 <x-app-layout>
 
+<style>
+    [x-cloak] { display: none !important; }
+</style>
 
 <div class="container">
 
@@ -35,9 +38,12 @@
 
        </table>
 
-     <a href="{{ route('surveys.edit', $survey) }}" class="btn btn-warning">Edit</a>
-    <a href="{{ route('surveys.index') }}" class="btn btn-secondary">Back</a>
-    <a href="{{ route('survey-questions.create', $survey->id) }}" class="btn btn-info">Add Question</a>
+    <div class="flex gap-1">
+        <a href="{{ route('surveys.edit', $survey) }}" class="btn btn-warning btn-sm">Edit</a>
+        <a href="{{ route('surveys.index') }}" class="btn btn-secondary btn-sm">Back</a>
+        <x-new-question-modal/>
+    </div>
+   
 </div>
 
 </x-app-layout>

@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 use App\Models\Survey;
 use App\Models\SurveyQuestion;
 use App\Models\QuestionOption;
+use Illuminate\Support\Facades\Log;
 
 
 
@@ -66,7 +67,8 @@ class SurveyQuestionController extends Controller
     public function store(Request $request)
     {
 
-    
+     dd($request);
+   
         $validated = $request->validate([
             'survey_id' => 'required|exists:surveys,id',
             'question_text' => 'required|string',
@@ -74,6 +76,7 @@ class SurveyQuestionController extends Controller
             'options' => 'array'
         ]);
 
+      
     
 
         $question = SurveyQuestion::create($validated);
