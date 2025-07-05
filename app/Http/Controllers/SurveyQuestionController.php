@@ -37,16 +37,17 @@ class SurveyQuestionController extends Controller
 
     // Update question
     $question->update($validated);
-  return redirect()->route('surveys.show', $question->survey_id);
 
-  /*   // Optionally update options (if applicable)
+
+    // Optionally update options (if applicable)
     if ($request->question_type === 'multiple_choice' && $request->has('options')) {
         $question->options()->delete(); // remove old
         foreach ($request->options as $text) {
             $question->options()->create(['option_text' => $text]);
         }
-    } */
+    } 
 
+      return redirect()->route('surveys.show', $question->survey_id)->with('toast_success', 'Question added successfully!');
    
 }
 

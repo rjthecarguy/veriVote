@@ -53,3 +53,15 @@
 
     <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/toastify-js"></script>
 </html>
+@if(session('toast_success'))
+<script>
+    Toastify({
+        text: "{{ session('toast_success') }}",
+        duration: 3000,
+        close: true,
+        gravity: "top",
+        position: "right",
+        backgroundColor: "#28a745",
+    }).showToast();
+</script>
+@endif
