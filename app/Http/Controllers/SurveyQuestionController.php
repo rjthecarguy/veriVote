@@ -67,7 +67,7 @@ class SurveyQuestionController extends Controller
     public function store(Request $request)
     {
 
-     dd($request);
+    
    
         $validated = $request->validate([
             'survey_id' => 'required|exists:surveys,id',

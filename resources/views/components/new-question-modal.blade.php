@@ -1,4 +1,8 @@
+@props(['surveyID'])
+
 <div>
+    
+
      <!-- DATA div -->
      <div x-data= "{open : false}">  
 
@@ -17,6 +21,9 @@
                             <form method="POST" action="{{ route('survey-questions.store') }}">
                              @csrf
                             
+                             <!-- Make sure the survey_id gets sent -->
+                             <input type="hidden" name="survey_id" value="{{$surveyID}}">
+
                             <!-- Input div --> 
                             <div class="mb-3">
                                 <!-- Get question text -->

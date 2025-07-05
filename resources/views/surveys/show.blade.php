@@ -41,7 +41,7 @@
     <div class="flex gap-1">
         <a href="{{ route('surveys.edit', $survey) }}" class="btn btn-warning btn-sm">Edit</a>
         <a href="{{ route('surveys.index') }}" class="btn btn-secondary btn-sm">Back</a>
-        <x-new-question-modal/>
+        <x-new-question-modal :surveyID="$survey->id"/>
     </div>
    
 </div>

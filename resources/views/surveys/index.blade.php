@@ -20,11 +20,12 @@
 
     </div>
 
-
+    <!-- Alert box div and logic -->
     @if(session('success'))
         <div id="alert-box" class="alert alert-success">{{ session('success') }}</div>
     @endif
 
+    <!-- Create table to list surveys -->
     <table class="table table-bordered">
         <thead>
             <tr>
@@ -34,14 +35,18 @@
             </tr>
         </thead>
         <tbody>
+
+            <!-- Iterate through the array of surveys -->
             @forelse($surveys as $survey)
                 <tr>
                     <td>{{ $survey->title }}</td>
                     <td>{{ $survey->description }}</td>
                     <td class="flex gap-1">
-                        <a href="{{ route('surveys.show', $survey) }}" class="btn btn-info btn-sm">View/Add Questions</a>
-                        <a href="{{ route('surveys.edit', $survey) }}" class="btn btn-warning btn-sm">Edit</a>
-                       
+                        <a href="{{ route('surveys.show', $survey) }}" class="btn btn-info btn-sm">View/Add Questions</a> 
+                    
+                      <a href="{{ route('surveys.edit', $survey) }}" class="btn btn-warning btn-sm">Edit</a> 
+                     
+        
                    
                         <!--<a href="{{ route('survey-questions.create', $survey->id) }}" class="btn btn-secondary btn-sm">Add Question</a>-->
                         <form action="{{ route('surveys.destroy', $survey) }}" method="POST" style="display:inline-block;">
