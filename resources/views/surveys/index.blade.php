@@ -9,6 +9,7 @@
     <div x-data= "{open : false}">
         <button @click = "open = true" class="btn btn-primary mb-4">Create New Survey</button>
 
+      <!-- Modal for new survey -->
       <x-new-survey-modal/>
 
     </div>
@@ -34,6 +35,8 @@
                     <td>
                         <a href="{{ route('surveys.show', $survey) }}" class="btn btn-info btn-sm">View</a>
                         <a href="{{ route('surveys.edit', $survey) }}" class="btn btn-warning btn-sm">Edit</a>
+                       
+                       <x-new-question-modal/>
                         <a href="{{ route('survey-questions.create', $survey->id) }}" class="btn btn-secondary btn-sm">Add Question</a>
                         <form action="{{ route('surveys.destroy', $survey) }}" method="POST" style="display:inline-block;">
                             @csrf
