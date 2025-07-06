@@ -4,7 +4,12 @@
 
              <span class="text-2xl text-blue-700">{{$question->question_text}}</span>
                 <hr class="mb-2">
-                <p class="mb-2 ml-2">Options</p>
+
+                @if($question->options->isNotEmpty()) 
+                    <p class="mb-2 ml-2">Options</p>
+                @else
+
+                @endif
 
                 @foreach($question->options as $option)
                     <div class='block bg-gray-200  rounded p-2 ml-2 mb-2 flex'>
