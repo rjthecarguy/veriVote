@@ -28,7 +28,7 @@
                             <div class="mb-3">
                                 <!-- Get question text -->
                                 <label class="mb-2">Question Text</label>
-                                <input type="text" name="question_text" class="form-control w-[60%]" required>
+                                <input type="text" name="question_text" class="form-control w-[95%]" required>
                             </div>  <!-- End of input div -->
 
                             <!-- Select div -->
@@ -46,7 +46,7 @@
                                 <div><input type="text" name="options[]" class="form-control mb-2"></div>
                             </div>  <!-- End of option div -->
                             <button id="option" type="button" class="mr-4 mb-2 " onclick="addOption()">+ Add Option</button>
-
+                            <button @click = "open = false" class="btn btn-secondary">Cancel</button>
 
                     <script>
 

@@ -1,5 +1,12 @@
 <x-app-layout>
 
+
+
+
+
+<script type="text/javascript" src="https://cdn.jsdelivr.net/npm/toastify-js"></script>
+<link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/toastify-js/src/toastify.min.css">
+
 <style>
     [x-cloak] { display: none !important; }
 </style>
@@ -28,7 +35,15 @@
 
     <tr>
         <td>{{$question->question_text}}</td>
-        <td><a href="{{route('questions.edit',$question->id)}}" class="btn btn-info mr-2">Edit</a> <a href="" class="btn btn-danger">Delete</a></td>
+        <td><a href="{{route('questions.edit',$question->id)}}" class="btn btn-info mr-2">Edit</a> <a href="" class="btn btn-danger">Delete</a>
+        
+            <form action="{{ route('questions.destroy', $question->id) }}" method="POST" onsubmit="return confirm('Delete this question?')">
+    @csrf
+    @method('DELETE')
+    <button type="submit" class="btn btn-danger">Delete</button>
+</form>
+
+        </td>
     </tr>
     @endforeach
 
@@ -41,22 +56,14 @@
     <div class="flex gap-1">
         <a href="{{ route('surveys.edit', $survey) }}" class="btn btn-warning btn-sm">Edit</a>
         <a href="{{ route('surveys.index') }}" class="btn btn-secondary btn-sm">Back</a>
+     
         <x-new-question-modal :surveyID="$survey->id"/>
     </div>
    
 </div>
 
-@if(session('toast_success'))
-<script>
-    Toastify({
-        text: "{{ session('toast_success') }}",
-        duration: 3000,
-        close: true,
-        gravity: "top",
-        position: "right",
-        backgroundColor: "#28a745",
-    }).showToast();
-</script>
-@endif
+
 
 </x-app-layout>
+
+

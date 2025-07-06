@@ -46,8 +46,9 @@ class SurveyQuestionController extends Controller
             $question->options()->create(['option_text' => $text]);
         }
     } 
-
-      return redirect()->route('surveys.show', $question->survey_id)->with('toast_success', 'Question added successfully!');
+      
+    return redirect()->route('surveys.show', $question->survey_id)->with('toast_success', "Question Updated");
+   
    
 }
 
@@ -98,5 +99,11 @@ class SurveyQuestionController extends Controller
         return redirect()->route('surveys.show', $validated['survey_id'])->with('success', 'Question added.');
     }
 
+    public function destroy(SurveyQuestion $question)
+{
+    $question->delete();
+
+    return redirect()->back()->with('toast_success', 'Question deleted successfully.');
+}
    
 }

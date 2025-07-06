@@ -19,6 +19,9 @@ Route::get('/', function () {
     return view('welcome');
 });
 
+Route::delete('/questions/{question}', [SurveyQuestionController::class, 'destroy'])->name('questions.destroy');
+
+
 //Route::get('/surveys/{survey}', [SurveyController::class, 'show'])->name('surveys.show');
 Route::put('/questions/{question}', [SurveyQuestionController::class, 'update'])->name('questions.update');
 Route::get('/questions/{id}/edit', [SurveyQuestionController::class, 'edit'])->name('questions.edit');
