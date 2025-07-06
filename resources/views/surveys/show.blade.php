@@ -37,11 +37,13 @@
         <td>{{$question->question_text}}</td>
         <td><a href="{{route('questions.edit',$question->id)}}" class="btn btn-info mr-2">Edit</a> <a href="" class="btn btn-danger">Delete</a>
         
-            <form action="{{ route('questions.destroy', $question->id) }}" method="POST" onsubmit="return confirm('Delete this question?')">
-    @csrf
-    @method('DELETE')
-    <button type="submit" class="btn btn-danger">Delete</button>
-</form>
+            <x-destroy-question :questionID="$question->id"/>
+
+           {{--  <form action="{{ route('questions.destroy', $question->id) }}" method="POST" onsubmit="return confirm('Delete this question?')">
+                @csrf
+                @method('DELETE')
+                <button type="submit" class="btn btn-danger">Delete</button>
+            </form> --}}
 
         </td>
     </tr>
