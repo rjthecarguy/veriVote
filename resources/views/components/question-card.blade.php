@@ -7,8 +7,19 @@
                 <p class="mb-2 ml-2">Options</p>
 
                 @foreach($question->options as $option)
-                    <div class='block bg-gray-300 rounded p-2 ml-2 mb-2'>
-                        {{$option->option_text}}
+                    <div class='block bg-gray-200  rounded p-2 ml-2 mb-2 flex'>
+                        <div class="w-[90%]">
+                            {{$option->option_text}}
+                        </div>
+
+                        <div class="mr-2">
+                            <button class="btn btn-primary btn-sm">Edit</button>
+                        </div>
+
+                         <div>
+                            <button class="btn btn-danger btn-sm">Delete</button>
+                        </div>
+
                     </div>
                 @endforeach
 
